@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, StyleSheet, View } from 'react-native';
 import { Container, Header, Left, Icon, Body, Title, Button, Right, Content, Footer, FooterTab } from 'native-base';
+import Home from './home'
+import weather from './controllers/weather'
 
 export default class Index extends Component {
-  render() {
+  render() {  
     return (
       <Container>
-                <Header>
-                    <Left>
-                        <Button transparent>
-                            <Icon name='menu' />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title>Header</Title>
-                    </Body>
-                    <Right />
-                </Header>
-                <Content>
-                  <Text>Hi world</Text>
-                </Content>
-                <Footer>
-                    <FooterTab>
-                        <Button full>
-                            <Text>Footer</Text>
-                        </Button>
-                    </FooterTab>
-                </Footer>
-            </Container>
+        <Header>
+            <Left>
+                <Button transparent>
+                    <Icon name='menu' />
+                </Button>
+            </Left>
+            <Body>
+                <Title>ReactKit</Title>
+            </Body>
+            <Right />
+        </Header>
+        <Content>
+          <Home title="Jimmy" />
+          <Text>{this.props.currentTemp}</Text>
+        </Content>
+        <Footer>
+            <FooterTab>
+                <Button full>
+                    <Text>Footer</Text>
+                </Button>
+            </FooterTab>
+        </Footer>
+    </Container>
     );
   }
 }
